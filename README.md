@@ -12,3 +12,13 @@ Origin Repo: https://github.com/jhkgogpl/git-stat
 
 # docker
 
+```bash
+docker pull ghcr.io/chuuuevi/git-stat
+```
+
+```bash
+docker run --rm -it \
+ -p 8080:8080 \
+ -v $YOUR_REPO_DIR:/repo \ 
+ghcr.io/chuuuevi/git-stat 
+```
