@@ -1,5 +1,0 @@
-com\asiainfo\controller\GitController.class
-com\asiainfo\Application.class
-com\asiainfo\stat\git\GitStat.class
-com\asiainfo\ServletInitializer.class
-com\asiainfo\stat\vo\StatData.class
