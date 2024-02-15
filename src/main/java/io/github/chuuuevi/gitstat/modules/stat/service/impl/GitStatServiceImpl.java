@@ -30,7 +30,7 @@ public class GitStatServiceImpl implements GitStatService {
     private final Pattern pat = Pattern.compile("(\\d+)\\s(\\d+)\\s");
 
     @Override
-    public List<StatData> stat(Integer method, String startDate,
+    public List<StatData> stat(int method, String startDate,
                                String endDate, String author, String gitRoot) throws Exception {
 
         Stack<String> result = multiCmdExec(method, startDate, endDate, author, gitRoot);
@@ -124,9 +124,14 @@ public class GitStatServiceImpl implements GitStatService {
                 days = 7;
             }
             case Constants.GitConstants.STAT_METHOD_MONTH -> {
-                Date today = new Date();
                 lastTime = cur.getTime();
                 cur.add(Calendar.MONTH, -1);
+                startTime = cur.getTime();
+                days = (lastTime.getTime() - startTime.getTime()) / Constants.StaticParam.DAY_MILLIONSECOND;
+            }
+            case Constants.GitConstants.STAT_METHOD_YEAR -> {
+                lastTime = cur.getTime();
+                cur.add(Calendar.YEAR, -1);
                 startTime = cur.getTime();
                 days = (lastTime.getTime() - startTime.getTime()) / Constants.StaticParam.DAY_MILLIONSECOND;
             }
@@ -167,6 +172,7 @@ public class GitStatServiceImpl implements GitStatService {
             case Constants.GitConstants.STAT_METHOD_DAY -> since = "1.day.ago";
             case Constants.GitConstants.STAT_METHOD_WEEK -> since = "1.week.ago";
             case Constants.GitConstants.STAT_METHOD_MONTH -> since = "1.month.ago";
+            case Constants.GitConstants.STAT_METHOD_YEAR -> since = "1.year.ago";
             default -> {
             }
         }

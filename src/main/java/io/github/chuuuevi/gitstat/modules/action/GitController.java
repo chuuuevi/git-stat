@@ -31,7 +31,7 @@ public class GitController {
 
     @RequestMapping("/git/stat")
     @ResponseBody
-    public Result<List<StatData>> statGit(@Valid @RequestParam(value = "method", required = true) @Min(0) @Max(3) Integer method,
+    public Result<List<StatData>> statGit(@Valid @RequestParam(value = "method", required = true) @Min(0) @Max(4) Integer method,
                                           @RequestParam(value = "startDate", required = false) String startDate,
                                           @RequestParam(value = "endDate", required = false) String endDate,
                                           @RequestParam(value = "name", required = false) String name,

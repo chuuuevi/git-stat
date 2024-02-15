@@ -14,6 +14,8 @@ RUN mvn -DskipTests package
 
 FROM amazoncorretto:17-alpine3.17
 
+LABEL org.opencontainers.image.source = "https://github.com/chuuuevi/git-stat"
+
 MAINTAINER "chuuuevi <chuuuevi@gmail.com>"
 
 ARG TIME_ZONE=Asia/Shanghai

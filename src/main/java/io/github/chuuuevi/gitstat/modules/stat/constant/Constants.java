@@ -14,6 +14,7 @@ public interface Constants {
         int STAT_METHOD_DAY = 1;
         int STAT_METHOD_WEEK = 2;
         int STAT_METHOD_MONTH = 3;
+        int STAT_METHOD_YEAR = 4;
         int STAT_METHOD_CUSTOM = 0;
     }
 }

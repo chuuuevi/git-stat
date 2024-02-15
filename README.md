@@ -17,8 +17,8 @@ docker pull ghcr.io/chuuuevi/git-stat
 ```
 
 ```bash
-docker run --rm -it \
+docker run --rm -it -d \
  -p 8080:8080 \
- -v $YOUR_REPO_DIR:/repo \ 
-ghcr.io/chuuuevi/git-stat 
+ -v ./:/repo \
+ghcr.io/chuuuevi/git-stat:0.1.0
 ```

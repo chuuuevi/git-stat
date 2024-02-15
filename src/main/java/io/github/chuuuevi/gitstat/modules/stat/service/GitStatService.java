@@ -8,6 +8,6 @@ import java.util.List;
  * Created by Jacky on 2015/7/14.
  */
 public interface GitStatService {
-    List<StatData> stat(Integer method, String startDate,
+    List<StatData> stat(int method, String startDate,
                         String endDate, String author, String gitRoot) throws Exception;
 }
