@@ -177,7 +177,7 @@ public class GitStatServiceImpl implements GitStatService {
             }
         }
 
-        String cmd = "git log --pretty=format:\"%cn;%ad;%d\" --numstat --date=iso"
+        String cmd = "git log --pretty=format:\"%aN;%ad;%d\" --numstat --date=iso"
                 + " --since=" + since;
         cmd += (until != null && !until.equals("")) ? (" --until=" + until) : "";
 //                + " --until=" + until;
